@@ -15,7 +15,7 @@
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+My start plan is to draw out the process at which the code runs or is supposed to run. That way I can visualize it easier and writing it will come a lot easier because I will know where it needs to be at certian stages rather than just blindly hoping for it to work. I think that the hardest part of this assignment will be Part5, mostly because I think I will end up struggling to get my code to actually have the output on lacation that I am hoping for it to have. Even if I know the process writing the code will still be difficult.
 
 ---
 

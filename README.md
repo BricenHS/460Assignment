@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+ It is not enough because it is not gaurenteed to provide the most optimal path 100% of the time because it can only procceed in one direction. Meaning it cannot backtrack.
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+ The remaining decision is the choice of what order the relics get visited in so that less fuel is used.
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  It is not a single computation because from the start point it checks for the shortest path reachable from relic to relic, until it has visited all relics, which it then finds shortest path to the exit (T).
 
 ---
 

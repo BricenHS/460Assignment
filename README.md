@@ -1,6 +1,6 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
+**Student Name:** _Bricen Humphrey-Schaefer__
 **Student ID:** ___________________________
 **Course:** CS 460 – Algorithms | Spring 2026
 
@@ -35,8 +35,8 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| _The start node S_ | _Fixed point, where you begin branching out._ |
+| _Every other relic node_ | _Because Dijkstras needs to be ran to find shortest path to each relic._ |
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,20 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary hash map adjacency list |
+| What the keys represent | Key represents the node where Dikjstra's starts |
+| What the values represent | The nodes that are the neighbors of the keys |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Once stored to memory, the nodes in list can be accsessed at a constant time. |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** |M| = k We need 1 dikjstra's run from every node in the set M. And one from the entrance node S. A total of k+1 dikjstra's runs. 
+- **Cost per run:** O(ElogV)
+- **Total complexity:** (k+1)(ElogV)
+- **Justification (one line):** Total Dikjstra's runs is k+1 and runs ElogV times.
 
 ---
 
@@ -65,17 +65,21 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 > Document your understanding of why Dijkstra produces correct distances.
 > Bullet points and short sentences throughout. No paragraphs.
+-So for the starting node it begins and checks for the next neighboring least cost node that it can reach assuming that the current node can be finalized.
+-Then once it is now on that node it repeats the check for the surrounding neighboring nodes moving to the next least cost node.
+-This will repeat to k+1 times because we know T does not need to run a dijkstra's algorithm
 
 ### Part 3a: What the Invariant Means
 
 > Two bullets: one for finalized nodes, one for non-finalized nodes.
 > Do not copy the invariant text from the spec.
+- Once finalized the distance is the amount of fuel used by the torch to get to T, and will never change once a node path is finalized.
+- For non-finalized nodes, their distance represents the shortest distance found so far, but it may still change if a shorter path is discovered.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
-
+  For each node that is finalized for S, it is the true minimum cost from the current starting relic node, to the next minimum node. This is finalized and the distance will not be changed at a later point.
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  The non-finalized nodes are ones that are the best fuel cost found so far for the current starting relic, however if a better cost path is found it can still be changed.
 
 ### Part 3b: Why Each Phase Holds
 

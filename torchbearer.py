@@ -72,10 +72,38 @@ def run_dijkstra(graph, source):
     dict[node, float]
         Minimum cost from source to every node in graph.
         Unreachable nodes map to float('inf').
-
-    TODO
     """
-    pass
+    start_vertex = source
+    distances ={node: float('inf') for node in graph}
+    distances[start_vertex] = 0
+    visited = {node: False for node in graph}
+
+    for _ in range(len(graph)):
+        min_distance = float('inf')
+        u = None
+        for i in graph:
+            if not visited[i] and distances[i] < min_distance:
+                min_distance = distances[i]
+                u = i
+
+        if u is None:
+            break
+
+        visited[u] = True
+
+        for (v,weight) in graph[u]:
+            if  not visited[v]:
+                alt = distances[u] + weight
+                if alt < distances[v]:
+                    distances[v] = alt
+
+    return distances
+    
+    
+
+   
+
+    
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
@@ -95,7 +123,16 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = [spawn] + relics
+    dist_table = {}
+        
+    for source in sources:
+        distances = run_dijkstra(graph, source)
+        dist_table[source] = distances
+
+    return dist_table
+            
+
 
 
 # =============================================================================

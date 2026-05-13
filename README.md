@@ -17,7 +17,7 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
- It is not enough because it is not gaurenteed to provide the most optimal path 100% of the time because it can only procceed in one direction. Meaning it cannot backtrack.
+A single Dikjstras run from S is not enough to know what the shortest path is. From every relic you must run Dikjstra's to find what the shortest path is all the way until T.
 
 - **What decision remains after all inter-location costs are known:**
  The remaining decision is the choice of what order the relics get visited in so that less fuel is used.

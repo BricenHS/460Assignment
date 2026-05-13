@@ -1,6 +1,6 @@
 # The Torchbearer
 
-**Student Name:** _Bricen Humphrey-Schaefer__
+**Student Name:** ___________________________
 **Student ID:** ___________________________
 **Course:** CS 460 – Algorithms | Spring 2026
 
@@ -17,7 +17,7 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-A single Dikjstras run from S is not enough to know what the shortest path is. From every relic you must run Dikjstra's to find what the shortest path is all the way until T.
+ It is not enough because it is not gaurenteed to provide the most optimal path 100% of the time because it can only procceed in one direction. Meaning it cannot backtrack.
 
 - **What decision remains after all inter-location costs are known:**
  The remaining decision is the choice of what order the relics get visited in so that less fuel is used.
@@ -35,8 +35,8 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _The start node S_ | _Fixed point, where you begin branching out._ |
-| _Every other relic node_ | _Because Dijkstras needs to be ran to find shortest path to each relic._ |
+| _node type_ | _one-line reason_ |
+| _node type_ | _one-line reason_ |
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,20 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Property | Your answer |
 |---|---|
-| Data structure name | Dictionary hash map adjacency list |
-| What the keys represent | Key represents the node where Dikjstra's starts |
-| What the values represent | The nodes that are the neighbors of the keys |
-| Lookup time complexity | O(1) |
-| Why O(1) lookup is possible | Once stored to memory, the nodes in list can be accsessed at a constant time. |
+| Data structure name | Priority Queue |
+| What the keys represent |  |
+| What the values represent |  |
+| Lookup time complexity |  |
+| Why O(1) lookup is possible |  |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** |M| = k We need 1 dikjstra's run from every node in the set M. And one from the entrance node S. A total of k+1 dikjstra's runs. 
-- **Cost per run:** O(ElogV)
-- **Total complexity:** (k+1)(ElogV)
-- **Justification (one line):** Total Dikjstra's runs is k+1 and runs ElogV times.
+- **Number of Dijkstra runs:** _your answer_
+- **Cost per run:** _your answer_
+- **Total complexity:** _your answer_
+- **Justification (one line):** _your answer_
 
 ---
 
@@ -65,21 +65,17 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 > Document your understanding of why Dijkstra produces correct distances.
 > Bullet points and short sentences throughout. No paragraphs.
--So for the starting node it begins and checks for the next neighboring least cost node that it can reach assuming that the current node can be finalized.
--Then once it is now on that node it repeats the check for the surrounding neighboring nodes moving to the next least cost node.
--This will repeat to k+1 times because we know T does not need to run a dijkstra's algorithm
 
 ### Part 3a: What the Invariant Means
 
 > Two bullets: one for finalized nodes, one for non-finalized nodes.
 > Do not copy the invariant text from the spec.
-- Once finalized the distance is the amount of fuel used by the torch to get to T, and will never change once a node path is finalized.
-- For non-finalized nodes, their distance represents the shortest distance found so far, but it may still change if a shorter path is discovered.
 
 - **For nodes already finalized (in S):**
-  For each node that is finalized for S, it is the true minimum cost from the current starting relic node, to the next minimum node. This is finalized and the distance will not be changed at a later point.
+  _Your answer here._
+
 - **For nodes not yet finalized (not in S):**
-  The non-finalized nodes are ones that are the best fuel cost found so far for the current starting relic, however if a better cost path is found it can still be changed.
+  _Your answer here._
 
 ### Part 3b: Why Each Phase Holds
 

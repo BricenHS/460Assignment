@@ -1,6 +1,6 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
+**Student Name:** Bricen Humphrey Schaefer
 **Student ID:** ___________________________
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
@@ -19,27 +19,24 @@ My start plan is to draw out the process at which the code runs or is supposed t
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5/13/26]: [Run_Dijkstras wouldn't work with the table output]
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+I forgot to write this yesterday, but I had to fix up run_dikjkstra's so that it would work with the graph table output. So I had to alter what length and tracking it was doing, which ended up being the correct fix to make the output work when I tested it. I couldn't fully be sure though until I wrote the solve function.
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5/14/26]: [Me being dumb]
 
-_Your entry here._
+I was struggling today to figure out how to make my text questions into a string. I figured out that it wasn't even really a big bug, I just literally forgot to implament one of the text functions. Because of this the code would not output a correct run, but after I fixed it, everything finally worked and it was good.
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5/14/26]: Post-Implementation Reflection
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
+I would improve the order in which I did things, I feel like I could have completed things more efficiently. Overall since it was spread over the course of a few days I think it was not that bad of a final assignment.
 
 ---
 
@@ -49,12 +46,12 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | >1hrs |
+| Part 2: Precomputation Design | >1hr |
+| Part 3: Algorithm Correctness | 1hr |
+| Part 4: Search Design | 2hrs |
+| Part 5: State and Search Space | 2hr |
+| Part 6: Pruning | 2hrs |
+| Part 7: Implementation | 2hrs |
+| README and DEVLOG writing | >1hr |
+| **Total** | ~11hrs |

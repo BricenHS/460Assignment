@@ -1,7 +1,7 @@
 # The Torchbearer
 
 **Student Name:** _Bricen Humphrey-Schaefer__
-**Student ID:** ___________________________
+**Student ID:** 827476527
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -117,10 +117,21 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 - Failure to take into account the total ending cost for the route
 - Only chooses the immediate best choice with no consideration for later optimal costs.
 - **Counter-example setup:**
-- 
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- Say S goes to {A,B} and it costs 1 to reach A and 2 to reach B
+- A is directed at nothing which is an issue
+- This counter example will end up breaking because the route can never finalize
+- **What greedy picks:** 
+- Chooses closest least cost path
+- So if it starts at S then moves to A at a 1 cost, it is now stuck at A because it cannnot backtrack to S and cannot just teleport to B
+- This is how greedy choosing a least immediate cost path can end up breaking
+- **What optimal picks:**
+- Optimal pick the immediate least cost connecting node that is adjacent to the source
+- If that source that it chooses has nothing to continue too after, then the code will not be able to finish that path, it will then parse to the next best path
+- Optimal will continue searching for the next best path, while in comparison greedy will stop
+- **Why greedy loses:** 
+- Greedy loses to optimal because it can parse over orders to the next best path
+- While greedy would break after not being able to continue the path, Optimal will continue to find the next best path
+- So that means that in in a situation where greedy cannot preform, optimal will still be able to find a valid path.
 
 ### What the Algorithm Must Explore
 
@@ -139,9 +150,9 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current | node / string  tracks where the alg is currently| |
+| Relics already collected | visited_relics | set | stores relics that have been visited |
+| Fuel cost so far | total_cost | number / int | stores the added travel cost so far |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -149,18 +160,18 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)|
+| Why this structure fits | It fits because it can check for immediate least cost and update |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** The worst case possible would be k!.
+- **Why:** Because there are k choices for the first relic, k−1 for the second, k−2 for the third, and so on, resulting in k! total possible orders.
 
 ---
 
@@ -170,23 +181,30 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** 
+- The minimum total cost found so far along with the order of visited relics
+- **When it is used:** 
+- When no routes are availiable it is used before it explores a path further
+- **What it allows the algorithm to skip:** 
+- It allows skipping the check of every branch of the search tree
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** 
+- What the current source is, which relics have not been visited, what the current fuel cost is, and the order the relics have been visited
+- **What the lower bound accounts for:** 
+- The minimum additional cost required before reaching exit T after visiting all relic chambers
+- **Why it never overestimates:** 
+- It will never take the larger path, so it wont overestimates.
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- Because all edge weights are nonnegative pruning is a safe action.
+- After finding a minimum path, adding any more points will only increase the total cost, so the path cannot have a better solution when running.
 
 ---
 
@@ -194,4 +212,4 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- W3Schools.com

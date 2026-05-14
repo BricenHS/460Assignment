@@ -137,7 +137,7 @@ A single Dikjstras run from S is not enough to know what the shortest path is. F
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- It must explore the route it takes from chamber to chamber and store the order in which the relic chambers get visited.
 
 ---
 
